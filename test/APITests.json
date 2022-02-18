@@ -1,0 +1,1047 @@
+{
+	"info": {
+		"_postman_id": "42c896ca-80ea-46ed-a398-2d26da18086c",
+		"name": "SOS1920-25 V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "delete countries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cc7283d8-818c-486f-b14f-23c179a8def8",
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,405]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries/loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "cae33945-f75b-4fa5-97a6-d36b3364a584",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6f8f39c0-2c3e-4c62-81ed-6a6f226699ae",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries Paginacion",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae348f47-2207-4a9e-b954-0de942128819",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate?limit=1&offset=1",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "offset",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries Pais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5422bf4d-ff64-4aaa-ad07-fe647643b758",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate?country=spain",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "spain"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries Año",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65bc3680-4b77-491e-91cb-56fc995c89f4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate?year=2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2019"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries happinessRanking",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2e0274ff-71eb-4d1c-b5c8-0daf24ebaace",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate?happinessRanking=66",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					],
+					"query": [
+						{
+							"key": "happinessRanking",
+							"value": "66"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries happinessRate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a32982cb-6da3-4a97-a2d5-41802c998bf9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate?happinessRate=6.592",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					],
+					"query": [
+						{
+							"key": "happinessRate",
+							"value": "6.592"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries Var",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ee08077-707d-4346-8119-a4d6059028d1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate?var=0.7",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					],
+					"query": [
+						{
+							"key": "var",
+							"value": "0.7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries entre años",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bcf4431d-5428-442e-98e0-7b71fb8f36e1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate?fromYear=2018&toYear=2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					],
+					"query": [
+						{
+							"key": "fromYear",
+							"value": "2018"
+						},
+						{
+							"key": "toYear",
+							"value": "2020"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put countriesforhappiness",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9d041b17-7398-4b31-bd07-967cddbb073c",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"country\": \"united-kingdom\",\n\t\"year\":     2019,\n\t\"happinesRanking\": 14,\n\t\"happinessRate\": 7.054,\n\t\"var\": 3.52\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post countriesforhappiness",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "628cf313-0253-40a2-9526-d30a26670c1c",
+						"exec": [
+							"pm.test(\"Successful POST,BAD REQUEST or CONFLICT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201,400,409]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\t\t\"country\": \"united-kingdom\",\r\n\t\t\"year\":     2019,\r\n\t\t\"happinessRanking\": 15,\r\n\t\t\"happinessRate\": 7.054,\r\n\t\t\"var\": 3.52\t\r\n\t\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post countriesforhappiness/united-kingdom",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "96f594a1-e838-4d5c-a4b4-86886f329c11",
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {",
+							"    pm.response.to.have.status(405);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n\t\t\"country\": \"united-kingdom\",\r\n\t\t\"year\":     2019,\r\n\t\t\"happinessRanking\": 15,\r\n\t\t\"happinessRate\": 7.054,\r\n\t\t\"var\": 3.52\t\r\n\t\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countriesforhappiness/united-kingdom",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f707534-28cd-4743-bb5d-62b09206c2b5",
+						"exec": [
+							"pm.test(\"Successful GET or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countriesforhappiness/united-kingdom",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "393ab2b9-34c3-4d33-866f-12da9ee48995",
+						"exec": [
+							"pm.test(\"Successful GET or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countriesforhappiness/united-kingdom/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a3153d54-eefb-4c62-b65f-7dc55e6d7313",
+						"exec": [
+							"pm.test(\"Successful GET or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countriesforhappiness/united-kingdom/2020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34ffab4c-3097-43b0-8cf3-c769c489d0c3",
+						"exec": [
+							"pm.test(\"Successful GET or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put countriesforhappiness/united-kingdom",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f0fd24fb-2d8b-4bf5-8f01-c1a053951f81",
+						"exec": [
+							"pm.test(\"Successful 0K, BAD REQUEST or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"country\": \"united-kingdom\",\n\t\"year\":     2020,\n\t\"happinessRanking\": 15,\n\t\"happinessRate\": 7.054,\n\t\"var\": 3.52\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put countriesforhappiness/united-kingdom",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b72ed5eb-e536-48df-9974-cebe4fe64856",
+						"exec": [
+							"pm.test(\"Successful 0K, BAD REQUEST or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,400,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"country\": \"united-kingdom\",\n\t\"year\":     2020,\n\t\"happinessRanking\": 14,\n\t\"happinessRate\": 7.054,\n\t\"var\": 3.52\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom/2020",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom",
+						"2020"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countriesforhappiness/united-kingdom",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a94dea5f-8a6e-4722-85cb-7c93645e4656",
+						"exec": [
+							"pm.test(\"Successful GET or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "883391d2-95c0-4f49-963d-36ad9faa61fa",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete countriesforhappiness/united-kingdom",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b5783de7-0796-414e-bcb4-87da0206d46d",
+						"exec": [
+							"pm.test(\"Successful DELETE or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete countriesforhappiness/united-kingdom/2019",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fed75196-1d00-4308-9383-d2b49fb40d68",
+						"exec": [
+							"pm.test(\"Successful DELETE or NOT FOUND request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/united-kingdom/2019",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"united-kingdom",
+						"2019"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2d7800ac-de25-4411-a0a4-31f18f017821",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete countries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c1c7e06b-723d-4ca4-b343-abf4689fc98f",
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,405]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries/loadInitialData",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "66ce87f0-5b7d-4438-82fd-2135c14bdeeb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate/loadInitialData",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate",
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get countries",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "370dc593-c1aa-441c-9498-590e6e3159fa",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/api/v2/happiness_rate",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"v2",
+						"happiness_rate"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
